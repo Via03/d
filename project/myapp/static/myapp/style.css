@@ -1,0 +1,64 @@
+/* MyApp — clean, minimalist, colorful */
+@font-face {
+  font-family: 'Cepedoza Via';
+  src: url('/static/myapp/fonts/CepedozaVia.woff2') format('woff2'),
+       url('/static/myapp/fonts/CepedozaVia.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root{
+  --bg: linear-gradient(180deg,#fbfdff 0%, #f1f5f9 100%);
+  --card: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --accent: #6C63FF;
+  --accent-2: #06b6d4;
+  --danger: #ef4444;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;color:var(--text);background:var(--bg);}
+
+.nav{display:flex;justify-content:center;gap:1.2rem;padding:1rem 0;font-weight:600}
+.nav a{color:var(--muted);text-decoration:none;padding:0.25rem 0;transition:color .15s}
+.nav a:hover{color:var(--accent)}
+
+/* Layout container */
+.container{max-width:980px;margin:0 auto;padding:2rem;text-align:center}
+
+/* Hero / centered title */
+.hero{display:flex;align-items:center;justify-content:center;flex-direction:column;min-height:58vh;text-align:center;padding:2rem}
+.hero-title{font-family:'Cepedoza Via', Georgia, 'Times New Roman', serif;font-size:5rem;line-height:1;margin:0;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:0.01em}
+.sub{color:var(--muted);margin-top:0.5rem}
+
+/* Buttons */
+.btn{display:inline-block;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:0.6rem 1rem;border-radius:999px;text-decoration:none;font-weight:600;box-shadow:0 6px 18px rgba(108,99,255,0.12);transition:transform .12s, box-shadow .12s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(108,99,255,0.16)}
+
+/* Cards & lists */
+.items-grid{list-style:none;padding:0;margin:1.2rem auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:900px}
+.card{background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.08);text-align:center;border-left:6px solid rgba(108,99,255,0.12);}
+.item-card a{display:block;color:var(--text);text-decoration:none;font-weight:700}
+.item-card a:hover{color:var(--accent)}
+
+.detail-card{max-width:760px;margin:1rem auto;padding:2rem}
+.muted{color:var(--muted)}
+.small{font-size:0.9rem}
+
+.link{color:var(--accent);text-decoration:none;font-weight:600}
+.link.danger{color:var(--danger)}
+
+.center{text-align:center}
+
+/* Footer */
+.site-footer{padding:1rem 0;color:var(--muted);text-align:center;border-top:1px solid rgba(15,23,42,0.04);margin-top:2rem}
+
+/* Make h1 generally centered for consistency */
+h1{margin:0 0 0.6rem 0;text-align:center}
+
+@media (max-width:600px){
+  .hero-title{font-size:2.4rem}
+  .detail-card{padding:1rem}
+}

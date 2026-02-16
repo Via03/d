@@ -1,0 +1,21 @@
+
+{% extends 'myapp/base.html' %}
+
+{% block title %}Items - Cepedoza, Ma. Via{% endblock %}
+
+{% block content %}
+  <h1>Items</h1>
+
+ 
+
+  <ul class="items-grid">
+    {% for item in items %}
+      <li class="card item-card">
+        <a href="{% url 'myapp:item-detail' item.id %}">{{ item.title }}</a>
+        <p>{{ item.body|truncatewords:20 }}</p>
+      </li>
+    {% empty %}
+      <li class="card muted">No items yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

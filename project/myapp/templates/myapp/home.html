@@ -1,0 +1,31 @@
+
+{% extends 'myapp/base.html' %}
+
+{% block title %}Home - Cepedoza, Ma. Via{% endblock %}
+
+{% block content %}
+
+<!-- Hero / Big Title -->
+<div class="hero">
+  <h1 class="hero-title">
+    Cepedoza, Ma. Via
+  </h1>
+  <p class="sub">A minimalist demo by an artistic student</p>
+</div>
+
+<!-- Latest posts from JSONPlaceholder -->
+<h2>Latest Posts</h2>
+<ul class="items-grid">
+  {% for post in posts %}
+    <li class="card item-card">
+      <a href="{% url 'myapp:item-detail' post.id %}">{{ post.title }}</a>
+      <p>{{ post.body|truncatewords:20 }}</p>
+    </li>
+  {% empty %}
+    <li class="card muted">No posts found.</li>
+  {% endfor %}
+</ul>
+
+<p class="center"><a class="btn" href="{% url 'myapp:item-list' %}">Browse all items</a></p>
+
+{% endblock %}

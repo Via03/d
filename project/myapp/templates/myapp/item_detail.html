@@ -1,0 +1,13 @@
+
+{% extends 'myapp/base.html' %}
+
+{% block title %}Item Detail - Cepedoza, Ma. Via{% endblock %}
+
+{% block content %}
+<div class="detail-card">
+  <h1>{{ item.title }}</h1>
+  <p>{{ item.body }}</p>
+
+  <p><a class="link" href="{% url 'myapp:item-list' %}">Back to items</a></p>
+</div>
+{% endblock %}
